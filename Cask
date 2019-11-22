@@ -31,3 +31,4 @@
 (depends-on "irony")
 (depends-on "helm-projectile")
 (depends-on "magit")
+(depends-on "yaml-mode")
