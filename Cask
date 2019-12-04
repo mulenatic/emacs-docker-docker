@@ -32,3 +32,4 @@
 (depends-on "helm-projectile")
 (depends-on "magit")
 (depends-on "yaml-mode")
+(depends-on "dockerfile-mode")
