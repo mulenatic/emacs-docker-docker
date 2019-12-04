@@ -14,7 +14,7 @@ add-apt-repository \
 	apt-get update && \
 	apt-get -y install docker-ce; \
 	rm -rf /var/lib/apt/lists/*;
-RUN echo '(depends-on "dockerfile-mode")' >> /root/.emacs.d/Cask; \
+RUN echo '(depends-on "dockerfile-mode")\n(depends-on "docker")' >> /root/.emacs.d/Cask; \
 	cd /root/.emacs.d/; cask install; \
 	sed -i 's/#TestAddons/echo "Testing if docker.sock file is present";\nif [ -f \/var\/run\/docker.sock ]; \nthen \necho "The hosts docker.sock file has not been mounted into the container. Please start the container with \"-v \/var\/run\/docker.sock:\/var\/run\/docker.sock\".";\n exit 1;\nfi;\n#TestAddons/g' /root/startup.sh
 ENTRYPOINT ["/root/startup.sh"]
