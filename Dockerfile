@@ -1,5 +1,5 @@
 # Use the newest emacs version from silex as base
-FROM mulenatic/emacs-docker:v2.1.3
+FROM mulenatic/emacs-docker:v2.2.0
 RUN sudo apt-get update; \
 	sudo apt-get -y install apt-transport-https ca-certificates curl gnupg2 software-properties-common; \
 	sudo curl -fsSL https://download.docker.com/linux/$(. /etc/os-release; echo "$ID")/gpg > /tmp/dkey; \
